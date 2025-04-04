@@ -1,0 +1,38 @@
+﻿@page
+@model DeleteModel
+
+<div class="max-w-2xl mx-auto">
+    <div class="bg-white rounded-lg shadow-sm p-8">
+        <div class="text-center mb-8">
+            <i class="fas fa-exclamation-triangle text-5xl text-red-500 mb-4"></i>
+            <h1 class="text-2xl font-serif text-gray-800">Êtes-vous sûr de vouloir supprimer ce restaurant ?</h1>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-6 mb-8">
+            <h2 class="text-xl font-serif text-gray-800 mb-4">@Model.Restaurant.Nom</h2>
+            <div class="space-y-2 text-gray-600">
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt text-gray-500 w-6"></i>
+                    <span class="ml-2">@Model.Restaurant.Adresse</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-utensils text-gray-500 w-6"></i>
+                    <span class="ml-2">@Model.Restaurant.Cuisine</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-star text-gray-500 w-6"></i>
+                    <span class="ml-2">@Model.Restaurant.Note</span>
+                </div>
+            </div>
+        </div>
+
+        <form method="post" class="flex justify-center space-x-4">
+            <a asp-page="Index" class="px-6 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200">
+                <i class="fas fa-times mr-2"></i>Annuler
+            </a>
+            <button type="submit" class="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                <i class="fas fa-trash mr-2"></i>Supprimer
+            </button>
+        </form>
+    </div>
+</div>

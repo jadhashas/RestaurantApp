@@ -1,0 +1,63 @@
+﻿@page
+@model IndexModel
+
+<div class="max-w-7xl mx-auto">
+    <div class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-serif text-gray-800">Restaurants</h1>
+        <a asp-page="Create" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full transition-colors">
+            <i class="fas fa-plus mr-2"></i>Ajouter un Restaurant
+        </a>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+        <table class="min-w-full">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="py-4 px-6 text-left text-gray-600 font-medium">Nom</th>
+                    <th class="py-4 px-6 text-left text-gray-600 font-medium">Adresse</th>
+                    <th class="py-4 px-6 text-left text-gray-600 font-medium">Cuisine</th>
+                    <th class="py-4 px-6 text-center text-gray-600 font-medium">Note</th>
+                    <th class="py-4 px-6 text-center text-gray-600 font-medium">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                @foreach (var item in Model.Restaurants)
+                {
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-4 px-6 text-gray-800">@item.Nom</td>
+                        <td class="py-4 px-6 text-gray-600">@item.Adresse</td>
+                        <td class="py-4 px-6 text-gray-600">@item.Cuisine</td>
+                        <td class="py-4 px-6 text-center">
+                            <div class="flex justify-center items-center">
+                                <div class="flex text-amber-400">
+                                    @for (int i = 0; i < Math.Floor(item.Note); i++)
+                                    {
+                                        <i class="fas fa-star"></i>
+                                    }
+                                    @if (item.Note % 1 != 0)
+                                    {
+                                        <i class="fas fa-star-half-alt"></i>
+                                    }
+                                </div>
+                                <span class="ml-2 text-gray-600">@item.Note</span>
+                            </div>
+                        </td>
+                        <td class="py-4 px-6 text-center">
+                            <div class="flex justify-center space-x-4">
+                                <a asp-page="Details" asp-route-id="@item.Id" class="text-amber-600 hover:text-amber-700">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                                <a asp-page="Edit" asp-route-id="@item.Id" class="text-amber-600 hover:text-amber-700">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a asp-page="Delete" asp-route-id="@item.Id" class="text-red-600 hover:text-red-700">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

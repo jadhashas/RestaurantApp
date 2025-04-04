@@ -1,0 +1,105 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Accueil";
+}
+
+<div class="relative">
+    <div class="h-[600px] bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="absolute inset-0 flex items-center justify-center text-center">
+            <div class="max-w-4xl px-6">
+                <h1 class="text-4xl md:text-6xl font-serif text-white mb-6">Découvrez les Meilleures Tables</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8">Les meilleurs restaurants de votre ville, sélectionnés avec soin</p>
+                <a href="/Restaurants" class="inline-flex items-center bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full text-lg transition-colors">
+                    <i class="fas fa-search mr-2"></i>Explorer les restaurants
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-serif text-center mb-12">Pourquoi choisir RestaurantApp ?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-amber-600 mb-4">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3 class="text-xl font-serif mb-4">Sélection Exclusive</h3>
+                <p class="text-gray-600">Une sélection rigoureuse des meilleurs restaurants de votre région.</p>
+            </div>
+            <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-amber-600 mb-4">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="text-xl font-serif mb-4">Avis Vérifiés</h3>
+                <p class="text-gray-600">Des notes et avis authentiques pour vous aider à choisir.</p>
+            </div>
+            <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-amber-600 mb-4">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="text-xl font-serif mb-4">Proche de Vous</h3>
+                <p class="text-gray-600">Trouvez facilement les meilleures adresses près de chez vous.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-serif mb-8">Une Expérience Gastronomique Unique</h2>
+            <p class="text-gray-600 mb-8 text-lg">
+                RestaurantApp vous accompagne dans la découverte des meilleures tables. 
+                De la cuisine traditionnelle aux innovations gastronomiques, trouvez le restaurant 
+                qui correspond à vos envies.
+            </p>
+            <a href="/Restaurants" class="inline-flex items-center bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full transition-colors">
+                <i class="fas fa-search mr-2"></i>Découvrir les restaurants
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-serif text-center mb-12">Les Cuisines à l'Honneur</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center group">
+                <div class="rounded-full overflow-hidden mb-4 aspect-square transform transition-transform group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80" 
+                         alt="Cuisine française" 
+                         class="w-full h-full object-cover"/>
+                </div>
+                <h3 class="font-serif text-lg">Française</h3>
+            </div>
+            <div class="text-center group">
+                <div class="rounded-full overflow-hidden mb-4 aspect-square transform transition-transform group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80" 
+                         alt="Cuisine italienne" 
+                         class="w-full h-full object-cover"/>
+                </div>
+                <h3 class="font-serif text-lg">Italienne</h3>
+            </div>
+            <div class="text-center group">
+                <div class="rounded-full overflow-hidden mb-4 aspect-square transform transition-transform group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1515692688679-6e42f517b64d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80" 
+                         alt="Cuisine japonaise" 
+                         class="w-full h-full object-cover"/>
+                </div>
+                <h3 class="font-serif text-lg">Japonaise</h3>
+            </div>
+            <div class="text-center group">
+                <div class="rounded-full overflow-hidden mb-4 aspect-square transform transition-transform group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1464500422302-6188776dcbac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80" 
+                         alt="Cuisine méditerranéenne" 
+                         class="w-full h-full object-cover"/>
+                </div>
+                <h3 class="font-serif text-lg">Méditerranéenne</h3>
+            </div>
+        </div>
+    </div>
+</div>

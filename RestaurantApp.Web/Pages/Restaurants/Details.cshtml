@@ -1,0 +1,55 @@
+﻿@page
+@model DetailsModel
+
+<div class="max-w-4xl mx-auto">
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h1 class="text-3xl font-serif text-gray-800">Détails du restaurant</h1>
+                <a asp-page="Index" class="text-amber-600 hover:text-amber-700">
+                    <i class="fas fa-arrow-left mr-2"></i>Retour
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="text-xl font-serif text-amber-600 mb-2">Nom</h2>
+                        <p class="text-gray-800">@Model.Restaurant.Nom</p>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-serif text-amber-600 mb-2">Adresse</h2>
+                        <p class="text-gray-800">@Model.Restaurant.Adresse</p>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-serif text-amber-600 mb-2">Cuisine</h2>
+                        <p class="text-gray-800">@Model.Restaurant.Cuisine</p>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-serif text-amber-600 mb-2">Note</h2>
+                        <div class="flex items-center">
+                            <div class="flex text-amber-400">
+                                @for (int i = 0; i < Math.Floor(Model.Restaurant.Note); i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                                @if (Model.Restaurant.Note % 1 != 0)
+                                {
+                                    <i class="fas fa-star-half-alt"></i>
+                                }
+                            </div>
+                            <span class="ml-2 text-gray-600">@Model.Restaurant.Note</span>
+                        </div>
+                    </div>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.Restaurant.ImagePath))
+                {
+                    <div class="rounded-lg overflow-hidden">
+                        <img src="@Model.Restaurant.ImagePath" alt="Image du restaurant" class="w-full h-64 object-cover" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
